@@ -10,5 +10,8 @@
     "push": "git add . && git commit -m \"Push\" && git push"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

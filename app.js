@@ -21,6 +21,7 @@ var coinCounter = function (total) {
     //function for working out the amount
     var amount;
     for (var i = 0; i < coinValues.length; i++) {
+        // dividing the returnValues by the coinValues to recieve the amount of coins
         amount = Math.floor(returnValue / coinValues[i]);
         // if the amount is greater than 0 start to count the different amount of coins
         if (amount > 0) {
@@ -50,12 +51,15 @@ app.get('/number', (req, res) => {
     if (x.includes('£')) {
         // removing the £ from the user input
         x = x.replace('£', '')
+        // setting to 2 decimal places
         x = Number(x).toFixed(2)
+        // multiplying by 100
         x = x * 100
     } else if (x.includes('.')) { // x is 2.50
         x = Number(x).toFixed(2)
         x = x.replace('.', '') // 250
     }
+    // is not a number or x if invalid input refers user to enter valid input
     if (isNaN(x) || ! x){
         console.log(x)
         return res.json("enter valid input")
