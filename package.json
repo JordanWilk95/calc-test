@@ -6,7 +6,8 @@
   "scripts": {
     "server": " --watch . -e js,html,css app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "push": "git add . && git commit -m \"Push\" && git push"
   },
   "author": "",
   "license": "ISC"
