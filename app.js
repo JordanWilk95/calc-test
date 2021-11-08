@@ -1,24 +1,25 @@
 // hosting local server and calling express
+const exp = require('constants')
 const express = require('express')
 const app = express()
 const PORT = 4060
-// making  a static index page
-app.use(express.static('index.html'))
-// making the app listen on a port
+    // making  a static index page
+app.use(express.static(__dirname + '/public'))
+    // making the app listen on a port
 app.listen(PORT, () => {
-    console.log(`Express server listening at http://localhost:${PORT}`)
-})
-//coin counter function
-var coinCounter = function (total) {
+        console.log(`Express server listening at http://localhost:${PORT}`)
+    })
+    //coin counter function
+var coinCounter = function(total) {
     // taking user input to convert
     var returnValue = total;
     // used to display the total amount of coins
     var totalcoins = {};
 
     // values for the coins 
-    const coinTypes = ["pound", "fifty", "twenty", "ten", "five", "two", "one"]
-    const coinValues = [100, 50, 20, 10, 5, 2, 1]
-    //function for working out the amount
+    const coinTypes = ["twopound", "pound", "fifty", "twenty", "two", "one"]
+    const coinValues = [200, 100, 50, 20, 2, 1]
+        //function for working out the amount
     var amount;
     for (var i = 0; i < coinValues.length; i++) {
         // dividing the returnValues by the coinValues to recieve the amount of coins
@@ -37,11 +38,7 @@ var coinCounter = function (total) {
 
 
 app.use(express.json())
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
-})
-
-// express endpoint
+    // express endpoint
 app.get('/number', (req, res) => {
     // takes user input
     let x = req.query.bar
@@ -51,20 +48,21 @@ app.get('/number', (req, res) => {
     if (x.includes('£')) {
         // removing the £ from the user input
         x = x.replace('£', '')
-        // setting to 2 decimal places
+            // setting to 2 decimal places
         x = Number(x).toFixed(2)
-        // multiplying by 100
+            // multiplying by 100
         x = x * 100
     } else if (x.includes('.')) { // x is 2.50
         x = Number(x).toFixed(2)
         x = x.replace('.', '') // 250
     }
     // is not a number or x if invalid input refers user to enter valid input
-    if (isNaN(x) || ! x){
+    if (isNaN(x) || !x) {
         console.log(x)
-        return res.json("enter valid input")
-        
-    } 
+        return res.status(400).json("enter valid input")
+
+    }
     //prints userinput to the json part on the numbers page
     res.json(coinCounter(x))
+
 })

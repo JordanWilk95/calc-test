@@ -1,0 +1,43 @@
+body {
+    background-color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    text-align: center;
+    color: #444;
+}
+
+p {
+    color: #444;
+}
+
+#form {
+    text-align: center;
+    background-color: white;
+    color: #444;
+}
+
+#coinCalcContainer {
+    text-align: center;
+    background-color: white;
+    color: #444;
+}
+
+#instructions {
+    text-align: center;
+    background-color: white;
+    color: #444;
+}
+
+#readME {
+    background-color: white;
+    color: #444;
+}
