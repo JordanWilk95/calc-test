@@ -1,6 +1,7 @@
 // hosting local server and calling express
 const exp = require('constants')
 const express = require('express')
+const fs = require('fs');
 const app = express()
 const PORT = 4060
     // making  a static index page
