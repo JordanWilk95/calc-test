@@ -63,14 +63,14 @@ test('shows 85p', () => {
     expect(x.two).toBe(7);
     expect(x.one).toBe(1);
 });
-test('shows £1.85p', () => {
-    let x = coinCounter("£1.85p");
-    console.log(coinCounter("£1.85p"))
+test('shows £1.97p', () => {
+    let x = coinCounter("£1.97p");
+    console.log(coinCounter("£1.97p"))
     console.log(x)
     expect(x.pound).toBe(1);
     expect(x.fifty).toBe(1);
-    expect(x.twenty).toBe(1);
-    expect(x.two).toBe(7);
+    expect(x.twenty).toBe(2);
+    expect(x.two).toBe(3);
     expect(x.one).toBe(1);
 });
 

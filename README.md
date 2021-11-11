@@ -14,6 +14,9 @@
 
 - For the isNaN section of the function this was done to make sure that any string that wasn't caught by the pound or p logic was thrown as an error. This then prompts the user to enter a valid input.
 
+## Testing
+The tests I have implemented are the 4, 85, £1.97p and an invalid input, I believe all tests would run as expected.
+
 ### Improvements
 - The first improvement that comes to mind would be to change the result to appear dynamically using a fetch request. Rather than the user submitting a form and being redirected. This would allow the user to make multiple queries in a row with having to go back.
 
@@ -23,6 +26,7 @@
 ## How to use
 - `npm i` 
 - `npm start` 
+- for testing use terminal and input `npm run test`
 - http://localhost:4060/
 - enter a number: "£2.50", "250", "2.45" will all produce valid inputs
 - invalid inputs are eg: empty strings, "£p", "1x"
